@@ -1,6 +1,6 @@
-app/.gradle
+.gradle
 
-app/build
+build
 
 **/logs/
 
@@ -8,4 +8,4 @@ app/build
 bin
 .project*
 .classpath
-app/.idea/
+.idea/

@@ -17,6 +17,5 @@ public class Even {
         }
 
         Engine.game(descriptionOfGame, questions, rightAnswers);
-
     }
 }

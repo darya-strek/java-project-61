@@ -37,7 +37,6 @@ public class Calc {
         }
 
         Engine.game(descriptionOfGame, questions, rightAnswers);
-
     }
 
     public static String getRandomOperator() {
