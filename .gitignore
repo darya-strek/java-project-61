@@ -9,3 +9,5 @@ bin
 .project*
 .classpath
 .idea/
+
+out/

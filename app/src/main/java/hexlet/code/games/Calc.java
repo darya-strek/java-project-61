@@ -5,12 +5,15 @@ import hexlet.code.Engine;
 public class Calc {
     public static void startGameCalc() {
 
+        int step = 0;
+        int maxStep = 3;
+
         String descriptionOfGame = "What is the result of the expression?";
 
-        String[] questions = new String[3];
-        String[] rightAnswers = new String[3];
+        String[] questions = new String[maxStep];
+        String[] rightAnswers = new String[maxStep];
 
-        for (var i = 0; i < 3; i += 1) {
+        for (var i = step; i < maxStep; i += 1) {
 
             int firstNumber = (int) (Math.random() * 30 + 3);
             int secondNumber = (int) (Math.random() * 30 + 3);
