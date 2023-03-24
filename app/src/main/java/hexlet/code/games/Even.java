@@ -5,16 +5,17 @@ import hexlet.code.Engine;
 public class Even {
     public static void startGameEven() {
 
-        int step = 0;
-        int maxStep = 3;
+        int stepOfGame = 0;
+        int maxStepOfGame = 3;
+        int maxRandomNumber = 100;
 
         String descriptionOfGame = "Answer 'yes' if the number is even, otherwise answer 'no'";
 
-        String[] questions = new String[maxStep];
-        String[] rightAnswers = new String[maxStep];
+        String[] questions = new String[maxStepOfGame];
+        String[] rightAnswers = new String[maxStepOfGame];
 
-        for (var i = step; i < maxStep; i += 1) {
-            int previewQuestion = (int) (Math.random() * 100 + 1);
+        for (var i = stepOfGame; i < maxStepOfGame; i += 1) {
+            int previewQuestion = (int) (Math.random() * maxRandomNumber + 1);
             questions[i] = Integer.toString(previewQuestion);
             rightAnswers[i] = (previewQuestion % 2 == 0) ? "yes" : "no";
         }

@@ -5,18 +5,19 @@ import hexlet.code.Engine;
 public class Calc {
     public static void startGameCalc() {
 
-        int step = 0;
-        int maxStep = 3;
+        int stepOfGame = 0;
+        int maxStepOfGame = 3;
+        int maxRandomNumber = 30;
 
         String descriptionOfGame = "What is the result of the expression?";
 
-        String[] questions = new String[maxStep];
-        String[] rightAnswers = new String[maxStep];
+        String[] questions = new String[maxStepOfGame];
+        String[] rightAnswers = new String[maxStepOfGame];
 
-        for (var i = step; i < maxStep; i += 1) {
+        for (var i = stepOfGame; i < maxStepOfGame; i += 1) {
 
-            int firstNumber = (int) (Math.random() * 30 + 3);
-            int secondNumber = (int) (Math.random() * 30 + 3);
+            int firstNumber = (int) (Math.random() * maxRandomNumber + 3);
+            int secondNumber = (int) (Math.random() * maxRandomNumber + 3);
             String operator = getRandomOperator();
 
             questions[i] = firstNumber + " " + operator + " " + secondNumber;
