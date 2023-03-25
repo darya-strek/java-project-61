@@ -4,8 +4,14 @@
 ### Maintainability:
 [![Maintainability](https://api.codeclimate.com/v1/badges/d0832b0a90257a5cfb93/maintainability)](https://codeclimate.com/github/darya-strekalovskaya/java-project-61/maintainability)
 
-### [Demonstration of Greet](https://asciinema.org/a/ZKG4CumE5n1RkvTtshHfVZqKR)
+### [Demonstration of Greet](https://asciinema.org/a/AidMLKiYAaz3oODnd69TepNxp)
 
-### [Demonstration game Even](https://asciinema.org/a/pYcbg0aevblwtligd3kI9K0Ap)
+### [Demonstration game Even](https://asciinema.org/a/Kz7U0nOkpDxYcj1nwIjV7yKSR)
 
-### [Demonstration game Calc](https://asciinema.org/a/n4KVuYjnKnklujnd99SajlFzZ)
+### [Demonstration game Calc](https://asciinema.org/a/jCYzMrLQQNdqpve2VMjxEheqD)
+
+### [Demonstration game GCD](https://asciinema.org/a/MtktzkbKyCEroNNldAOrVFYDt)
+
+### [Demonstration game Progression](https://asciinema.org/a/DqnSbX4O7c922mpn05ElIaVRs)
+
+### [Demonstration game Prime](https://asciinema.org/a/KKkoewtA0ujLRlxLtn4IujUAT)

@@ -22,20 +22,12 @@ public class Calc {
 
             questions[i] = firstNumber + " " + operator + " " + secondNumber;
 
-            int operationResult;
-            switch (operator) {
-                case "+":
-                    operationResult = firstNumber + secondNumber;
-                    break;
-                case "-":
-                    operationResult = firstNumber - secondNumber;
-                    break;
-                case "*":
-                    operationResult = firstNumber * secondNumber;
-                    break;
-                default:
-                    operationResult = Integer.parseInt(null);
-            }
+            int operationResult = switch (operator) {
+                case "+" -> firstNumber + secondNumber;
+                case "-" -> firstNumber - secondNumber;
+                case "*" -> firstNumber * secondNumber;
+                default -> Integer.parseInt(null);
+            };
 
             rightAnswers[i] = Integer.toString(operationResult);
         }

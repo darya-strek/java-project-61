@@ -24,29 +24,15 @@ public class App {
         String userChoice = scanner.next();
 
         switch (userChoice) {
-            case "1":
-                Cli.greetings();
-                break;
-            case "2":
-                Even.startGameEven();
-                break;
-            case "3":
-                Calc.startGameCalc();
-                break;
-            case "4":
-                GCD.startGameGCD();
-                break;
-            case "5":
-                Progression.startGameProgression();
-                break;
-            case "6":
-                Prime.startGamePrime();
-                break;
-            default:
-                scanner.close();
+            case "1" -> Cli.greetings();
+            case "2" -> Even.startGameEven();
+            case "3" -> Calc.startGameCalc();
+            case "4" -> GCD.startGameGCD();
+            case "5" -> Progression.startGameProgression();
+            case "6" -> Prime.startGamePrime();
+            default -> scanner.close();
         }
 
         scanner.close();
-
     }
 }
