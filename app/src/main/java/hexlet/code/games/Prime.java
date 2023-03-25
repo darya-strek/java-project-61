@@ -22,7 +22,6 @@ public class Prime {
 
         Engine.game(descriptionOfGame, questions, rightAnswers);
     }
-
     public static boolean isPrime(int number) {
         for (var n = 2; n <= (number / 2); n += 1) {
             if (number % n == 0) {
