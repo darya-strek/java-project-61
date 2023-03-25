@@ -9,7 +9,7 @@ public class Even {
         int maxStepOfGame = 3;
         int maxRandomNumber = 100;
 
-        String descriptionOfGame = "Answer 'yes' if the number is even, otherwise answer 'no'";
+        String descriptionOfGame = "Answer 'yes' if the number is even, otherwise answer 'no'.";
 
         String[] questions = new String[maxStepOfGame];
         String[] rightAnswers = new String[maxStepOfGame];
