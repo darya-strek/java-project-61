@@ -21,8 +21,8 @@ public class GCD {
 
             questions[i] = firstNumber + " " + secondNumber;
 
-            int previewRightAnswer = getGreatestCommonDivisor(firstNumber, secondNumber);
-            rightAnswers[i] = Integer.toString(previewRightAnswer);
+            int currentRightAnswer = getGreatestCommonDivisor(firstNumber, secondNumber);
+            rightAnswers[i] = Integer.toString(currentRightAnswer);
         }
 
         Engine.game(descriptionOfGame, questions, rightAnswers);
