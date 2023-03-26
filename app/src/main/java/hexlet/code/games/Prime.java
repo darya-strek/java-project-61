@@ -11,8 +11,11 @@ public class Prime {
     private static final String DESCRIPTION = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
     public static boolean isPrime(int number) {
+        if (number <= 0) {
+            return false;
+        }
         for (var n = 2; n <= (number / 2); n += 1) {
-            if (number <= 0 || number % n == 0) {
+            if (number % n == 0) {
                 return false;
             }
         }
@@ -28,11 +31,12 @@ public class Prime {
 
         for (var i = firstStepOfGame; i < maxStepOfGame; i += 1) {
             int currentRandomNumber = Utils.generateRangomNumber(MAX_RANDOM_NUMBER, MIN_RANDOM_NUMBER);
+            String rightAnswer = isPrime(currentRandomNumber) ? "yes" : "no";
             questionsAndAnswers[i][0] = Integer.toString(currentRandomNumber);
-            questionsAndAnswers[i][1] = isPrime(currentRandomNumber) ? "yes" : "no";
+            questionsAndAnswers[i][1] = rightAnswer;
         }
 
         Engine.game(DESCRIPTION, questionsAndAnswers);
-    }
 
+    }
 }

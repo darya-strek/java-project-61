@@ -42,6 +42,6 @@ public class Calc {
         }
 
         Engine.game(DESCRIPTION, questionsAndAnswers);
-    }
 
+    }
 }
