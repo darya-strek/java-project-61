@@ -25,12 +25,10 @@ public class App {
 
         switch (userChoice) {
             case "1" -> {
-                Scanner scannerOfName = new Scanner(System.in);
                 System.out.println("Welcome to the Brain Games!");
                 System.out.print("May I have your name? ");
-                String userName = scannerOfName.next();
+                String userName = scanner.next();
                 System.out.println("Hello, " + userName + "!");
-                scannerOfName.close();
             }
             case "2" -> Even.startGameEven();
             case "3" -> Calc.startGameCalc();

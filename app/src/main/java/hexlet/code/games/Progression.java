@@ -37,7 +37,7 @@ public class Progression {
 
             String[] arrayOfNumbers = generateProgressionArray(firstNumber, stepOfProgression, lengthOfArray);
 
-            int hiddenArrayNumber = Utils.generateRangomNumber(lengthOfArray, 0);
+            int hiddenArrayNumber = (int) Math.random() * lengthOfArray;
 
             questionsAndAnswers[i][1] = arrayOfNumbers[hiddenArrayNumber];
             arrayOfNumbers[hiddenArrayNumber] = "..";
