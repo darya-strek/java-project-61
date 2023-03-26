@@ -5,9 +5,8 @@ import hexlet.code.Engine;
 public class Calc {
     public static void startGameCalc() {
 
-        int stepOfGame = 0;
-        int maxStepOfGame = 3;
-        int maxRandomNumber = 30;
+        int stepOfGame = Engine.FIRST_STEP_OF_GAME;
+        int maxStepOfGame = Engine.MAX_STEP_OF_GAME;
 
         String descriptionOfGame = "What is the result of the expression?";
 
@@ -16,8 +15,8 @@ public class Calc {
 
         for (var i = stepOfGame; i < maxStepOfGame; i += 1) {
 
-            int firstNumber = (int) (Math.random() * maxRandomNumber + 3);
-            int secondNumber = (int) (Math.random() * maxRandomNumber + 3);
+            int firstNumber = Engine.getRangomNumber(Engine.MAX_RANDOM_NUMBER, Engine.MIN_RANDOM_NUMBER);
+            int secondNumber = Engine.getRangomNumber(Engine.MAX_RANDOM_NUMBER, Engine.MIN_RANDOM_NUMBER);
             String operator = getRandomOperator();
 
             questions[i] = firstNumber + " " + operator + " " + secondNumber;

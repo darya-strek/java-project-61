@@ -5,11 +5,12 @@ import hexlet.code.Engine;
 public class Progression {
     public static void startGameProgression() {
 
-        int stepOfGame = 0;
-        int maxStepOfGame = 3;
-        int maxLengthOfArray = 8;
-        int maxFirstNumber = 15;
-        int maxStepOfProgression = 12;
+        int stepOfGame = Engine.FIRST_STEP_OF_GAME;
+        int maxStepOfGame = Engine.MAX_STEP_OF_GAME;
+        final int minLengthOfArray = 5;
+        final int maxLengthOfArray = 8;
+        final int maxFirstNumber = 15;
+        final int maxStepOfProgression = 12;
 
         String descriptionOfGame = "What number is missing in the progression?";
 
@@ -18,11 +19,11 @@ public class Progression {
 
         for (var i = stepOfGame; i < maxStepOfGame; i += 1) {
 
-            int lengthOfArray = (int) (Math.random() * maxLengthOfArray + 5);
+            int lengthOfArray = Engine.getRangomNumber(maxLengthOfArray, minLengthOfArray);
             String[] arrayOfNumbers = new String[lengthOfArray];
 
-            int firstNumber = (int) (Math.random() * maxFirstNumber + 1);
-            int stepOfProgression = (int) (Math.random() * maxStepOfProgression + 1);
+            int firstNumber = Engine.getRangomNumber(maxFirstNumber, Engine.MIN_RANDOM_NUMBER);
+            int stepOfProgression = Engine.getRangomNumber(maxStepOfProgression, Engine.MIN_RANDOM_NUMBER);
             int currentNumber = firstNumber;
 
             for (var n = 0; n < lengthOfArray; n += 1) {
