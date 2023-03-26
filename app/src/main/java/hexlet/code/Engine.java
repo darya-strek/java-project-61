@@ -4,43 +4,37 @@ import java.util.Scanner;
 
 public class Engine {
 
-    public static final int FIRST_STEP_OF_GAME = 0;
-    public static final int MAX_STEP_OF_GAME = 3;
-    public static final int MIN_RANDOM_NUMBER = 1;
-    public static final int MAX_RANDOM_NUMBER = 100;
+    public static void game(String description, String[][] questionsAndAnswers) {
 
-    public static void game(String description, String[] questions, String[] rightAnswers) {
+        Scanner scannerOfName = new Scanner(System.in);
 
-        int stepOfGame = FIRST_STEP_OF_GAME;
-
-        Cli.greetings();
+        System.out.println("Welcome to the Brain Games!");
+        System.out.print("May I have your name? ");
+        String userName = scannerOfName.next();
+        System.out.println("Hello, " + userName + "!");
         System.out.println(description);
 
-        while (stepOfGame < MAX_STEP_OF_GAME) {
-            Scanner scanner = new Scanner(System.in);
-            System.out.println("\nQuestion: " + questions[stepOfGame]);
-            System.out.print("Your answer: ");
-            String userAnswer = (scanner.next()).toLowerCase();
+        for (String[] questionAnswer : questionsAndAnswers) {
 
-            if (userAnswer.equals(rightAnswers[stepOfGame])) {
+            Scanner scannerOfAnswer = new Scanner(System.in);
+
+            System.out.println("\nQuestion: " + questionAnswer[0]);
+            System.out.print("Your answer: ");
+            String userAnswer = (scannerOfAnswer.next()).toLowerCase();
+
+            if (userAnswer.equals(questionAnswer[1])) {
                 System.out.println("Correct!");
-                stepOfGame += 1;
             } else {
                 System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '"
-                        + rightAnswers[stepOfGame] + "'.");
-                System.out.println("Let's try again, " + Cli.getUserName() + "!");
-                scanner.close();
-                break;
+                        + questionAnswer[1] + "'.");
+                System.out.println("Let's try again, " + userName + "!");
+                scannerOfAnswer.close();
+                return;
             }
         }
 
-        if (stepOfGame == MAX_STEP_OF_GAME) {
-            System.out.println("Congratulations, " + Cli.getUserName() + "!");
-        }
-
+        System.out.println("Congratulations, " + userName + "!");
     }
 
-    public static int getRangomNumber(int maxNumber, int minNumber) {
-        return (int) (Math.random() * maxNumber + minNumber);
-    }
 }
+
