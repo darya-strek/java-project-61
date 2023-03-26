@@ -6,12 +6,12 @@
 
 ### [Demonstration of Greet](https://asciinema.org/a/AidMLKiYAaz3oODnd69TepNxp)
 
-### [Demonstration game Even](https://asciinema.org/a/Kz7U0nOkpDxYcj1nwIjV7yKSR)
+### [Demonstration of game Even](https://asciinema.org/a/Kz7U0nOkpDxYcj1nwIjV7yKSR)
 
-### [Demonstration game Calc](https://asciinema.org/a/jCYzMrLQQNdqpve2VMjxEheqD)
+### [Demonstration of game Calc](https://asciinema.org/a/jCYzMrLQQNdqpve2VMjxEheqD)
 
-### [Demonstration game GCD](https://asciinema.org/a/MtktzkbKyCEroNNldAOrVFYDt)
+### [Demonstration of game GCD](https://asciinema.org/a/MtktzkbKyCEroNNldAOrVFYDt)
 
-### [Demonstration game Progression](https://asciinema.org/a/DqnSbX4O7c922mpn05ElIaVRs)
+### [Demonstration of game Progression](https://asciinema.org/a/DqnSbX4O7c922mpn05ElIaVRs)
 
-### [Demonstration game Prime](https://asciinema.org/a/KKkoewtA0ujLRlxLtn4IujUAT)
+### [Demonstration of game Prime](https://asciinema.org/a/KKkoewtA0ujLRlxLtn4IujUAT)
