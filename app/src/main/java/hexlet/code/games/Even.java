@@ -3,22 +3,30 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 
 public class Even {
+
+    private static final int MIN_RANDOM_NUMBER = 1;
+    private static final int MAX_RANDOM_NUMBER = 100;
+
+    private static final String DESCRIPTION = "Answer 'yes' if the number is even, otherwise answer 'no'.";
+
+    private static boolean isEven(int number) {
+        return number % 2 == 0;
+    }
+
     public static void startGameEven() {
 
-        int stepOfGame = Engine.FIRST_STEP_OF_GAME;
-        int maxStepOfGame = Engine.MAX_STEP_OF_GAME;
+        final int firstStepOfGame = 0;
+        final int maxStepOfGame = 3;
 
-        String descriptionOfGame = "Answer 'yes' if the number is even, otherwise answer 'no'.";
+        String[][] questionsAndAnswers = new String[maxStepOfGame][2];
 
-        String[] questions = new String[maxStepOfGame];
-        String[] rightAnswers = new String[maxStepOfGame];
-
-        for (var i = stepOfGame; i < maxStepOfGame; i += 1) {
-            int currentRandomNumber = Engine.getRangomNumber(Engine.MAX_RANDOM_NUMBER, Engine.MIN_RANDOM_NUMBER);
-            questions[i] = Integer.toString(currentRandomNumber);
-            rightAnswers[i] = (currentRandomNumber % 2 == 0) ? "yes" : "no";
+        for (var i = firstStepOfGame; i < maxStepOfGame; i += 1) {
+            int currentRandomNumber = Utils.generateRangomNumber(MAX_RANDOM_NUMBER, MIN_RANDOM_NUMBER);
+            questionsAndAnswers[i][0] = Integer.toString(currentRandomNumber);
+            questionsAndAnswers[i][1] = isEven(currentRandomNumber) ? "yes" : "no";
         }
 
-        Engine.game(descriptionOfGame, questions, rightAnswers);
+        Engine.game(DESCRIPTION, questionsAndAnswers);
     }
+
 }
