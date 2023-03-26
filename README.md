@@ -10,6 +10,7 @@ The project is a collection of elementary mathematical games:
 - GCD - finding the greatest common divisor of numbers, 
 - Progression - finding the missing member of an arithmetic progression, 
 - Prime - finding whether a number is prime.
+
 These games are implemented using basic constructs and methods of Java.
 
 ### [Demonstration of Greet](https://asciinema.org/a/AidMLKiYAaz3oODnd69TepNxp)
