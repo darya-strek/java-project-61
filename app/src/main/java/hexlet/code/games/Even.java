@@ -16,12 +16,12 @@ public class Even {
 
     public static void startGameEven() {
 
-        final int firstStepOfGame = 0;
+        final int stepOfGame = 0;
         final int maxStepOfGame = 3;
 
         String[][] questionsAndAnswers = new String[maxStepOfGame][2];
 
-        for (var i = firstStepOfGame; i < maxStepOfGame; i += 1) {
+        for (var i = stepOfGame; i < maxStepOfGame; i += 1) {
             int currentRandomNumber = Utils.generateRangomNumber(MAX_RANDOM_NUMBER, MIN_RANDOM_NUMBER);
             questionsAndAnswers[i][0] = Integer.toString(currentRandomNumber);
             questionsAndAnswers[i][1] = isEven(currentRandomNumber) ? "yes" : "no";
