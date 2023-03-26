@@ -3,41 +3,44 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 
 public class Calc {
+
+    private static final int MIN_RANDOM_NUMBER = 1;
+    private static final int MAX_RANDOM_NUMBER = 100;
+
+    private static final String DESCRIPTION = "What is the result of the expression?";
+
+    private static String getRandomOperator() {
+        String[] operators = {"+", "-", "*"};
+        int i = (int) (Math.random() * operators.length);
+        return operators[i];
+    }
+
     public static void startGameCalc() {
 
-        int stepOfGame = Engine.FIRST_STEP_OF_GAME;
-        int maxStepOfGame = Engine.MAX_STEP_OF_GAME;
+        final int firstStepOfGame = 0;
+        final int maxStepOfGame = 3;
 
-        String descriptionOfGame = "What is the result of the expression?";
+        String[][] questionsAndAnswers = new String[maxStepOfGame][2];
 
-        String[] questions = new String[maxStepOfGame];
-        String[] rightAnswers = new String[maxStepOfGame];
+        for (var i = firstStepOfGame; i < maxStepOfGame; i += 1) {
 
-        for (var i = stepOfGame; i < maxStepOfGame; i += 1) {
-
-            int firstNumber = Engine.getRangomNumber(Engine.MAX_RANDOM_NUMBER, Engine.MIN_RANDOM_NUMBER);
-            int secondNumber = Engine.getRangomNumber(Engine.MAX_RANDOM_NUMBER, Engine.MIN_RANDOM_NUMBER);
+            int firstNumber = Utils.generateRangomNumber(MAX_RANDOM_NUMBER, MIN_RANDOM_NUMBER);
+            int secondNumber = Utils.generateRangomNumber(MAX_RANDOM_NUMBER, MIN_RANDOM_NUMBER);
             String operator = getRandomOperator();
 
-            questions[i] = firstNumber + " " + operator + " " + secondNumber;
+            questionsAndAnswers[i][0] = firstNumber + " " + operator + " " + secondNumber;
 
             int operationResult = switch (operator) {
                 case "+" -> firstNumber + secondNumber;
                 case "-" -> firstNumber - secondNumber;
                 case "*" -> firstNumber * secondNumber;
-                default -> Integer.parseInt(null);
+                default -> throw new RuntimeException("Unknown operator");
             };
 
-            rightAnswers[i] = Integer.toString(operationResult);
+            questionsAndAnswers[i][1] = Integer.toString(operationResult);
         }
 
-        Engine.game(descriptionOfGame, questions, rightAnswers);
+        Engine.game(DESCRIPTION, questionsAndAnswers);
     }
 
-    public static String getRandomOperator() {
-        final int countOfOperators = 3;
-        String[] operators = {"+", "-", "*"};
-        int i = (int) (Math.random() * countOfOperators);
-        return operators[i];
-    }
 }
