@@ -24,13 +24,21 @@ public class App {
         String userChoice = scanner.next();
 
         switch (userChoice) {
-            case "1" -> Cli.greetings();
+            case "1" -> {
+                Scanner scannerOfName = new Scanner(System.in);
+                System.out.println("Welcome to the Brain Games!");
+                System.out.print("May I have your name? ");
+                String userName = scannerOfName.next();
+                System.out.println("Hello, " + userName + "!");
+                scannerOfName.close();
+            }
             case "2" -> Even.startGameEven();
             case "3" -> Calc.startGameCalc();
             case "4" -> GCD.startGameGCD();
             case "5" -> Progression.startGameProgression();
             case "6" -> Prime.startGamePrime();
-            default -> scanner.close();
+            case "0" -> System.out.println("Goodbye!");
+            default -> throw new RuntimeException("Unknown input: " + userChoice);
         }
 
         scanner.close();
