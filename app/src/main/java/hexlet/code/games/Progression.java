@@ -3,41 +3,49 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 
 public class Progression {
+
+    private static final int MIN_RANDOM_NUMBER = 1;
+    private static final int MIN_LENGTH_OF_ARRAY = 5;
+    private static final int MAX_LENGTH_OF_ARRAY = 8;
+    private static final int MAX_FIRST_NUMBER = 15;
+    private static final int MAX_STEP_OF_PROGRESSION = 12;
+
+    private static final String DESCRIPTION = "What number is missing in the progression?";
+
+    private static String[] generateProgressionArray(int firstNumber, int step, int length) {
+        String[] array = new String[length];
+        int currentNumber = firstNumber;
+        for (var n = 0; n < length; n += 1) {
+            array[n] = String.valueOf(currentNumber);
+            currentNumber += step;
+        }
+        return array;
+    }
+
     public static void startGameProgression() {
 
-        int stepOfGame = Engine.FIRST_STEP_OF_GAME;
-        int maxStepOfGame = Engine.MAX_STEP_OF_GAME;
-        final int minLengthOfArray = 5;
-        final int maxLengthOfArray = 8;
-        final int maxFirstNumber = 15;
-        final int maxStepOfProgression = 12;
+        final int stepOfGame = 0;
+        final int maxStepOfGame = 3;
 
-        String descriptionOfGame = "What number is missing in the progression?";
-
-        String[] questions = new String[maxStepOfGame];
-        String[] rightAnswers = new String[maxStepOfGame];
+        String[][] questionsAndAnswers = new String[maxStepOfGame][2];
 
         for (var i = stepOfGame; i < maxStepOfGame; i += 1) {
 
-            int lengthOfArray = Engine.getRangomNumber(maxLengthOfArray, minLengthOfArray);
-            String[] arrayOfNumbers = new String[lengthOfArray];
+            int firstNumber = Utils.generateRangomNumber(MAX_FIRST_NUMBER, MIN_RANDOM_NUMBER);
+            int stepOfProgression = Utils.generateRangomNumber(MAX_STEP_OF_PROGRESSION, MIN_LENGTH_OF_ARRAY);
+            int lengthOfArray = Utils.generateRangomNumber(MAX_LENGTH_OF_ARRAY, MIN_LENGTH_OF_ARRAY);
 
-            int firstNumber = Engine.getRangomNumber(maxFirstNumber, Engine.MIN_RANDOM_NUMBER);
-            int stepOfProgression = Engine.getRangomNumber(maxStepOfProgression, Engine.MIN_RANDOM_NUMBER);
-            int currentNumber = firstNumber;
+            String[] arrayOfNumbers = generateProgressionArray(firstNumber, stepOfProgression, lengthOfArray);
 
-            for (var n = 0; n < lengthOfArray; n += 1) {
-                arrayOfNumbers[n] = String.valueOf(currentNumber);
-                currentNumber += stepOfProgression;
-            }
+            int hiddenArrayNumber = Utils.generateRangomNumber(lengthOfArray, 0);
 
-            int hiddenArrayNumber = (int) (Math.random() * lengthOfArray);
-            rightAnswers[i] = arrayOfNumbers[hiddenArrayNumber];
+            questionsAndAnswers[i][1] = arrayOfNumbers[hiddenArrayNumber];
             arrayOfNumbers[hiddenArrayNumber] = "..";
-            questions[i] = String.join(" ", arrayOfNumbers);
+            questionsAndAnswers[i][0] = String.join(" ", arrayOfNumbers);
 
         }
 
-        Engine.game(descriptionOfGame, questions, rightAnswers);
+        Engine.game(DESCRIPTION, questionsAndAnswers);
     }
+
 }
