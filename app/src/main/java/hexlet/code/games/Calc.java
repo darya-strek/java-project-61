@@ -35,8 +35,9 @@ public class Calc {
     }
 
     public static String getRandomOperator() {
+        final int countOfOperators = 3;
         String[] operators = {"+", "-", "*"};
-        int i = (int) (Math.random() * 3);
+        int i = (int) (Math.random() * countOfOperators);
         return operators[i];
     }
 }
