@@ -1,6 +1,7 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
 public class Even {
 
@@ -27,6 +28,6 @@ public class Even {
         }
 
         Engine.game(DESCRIPTION, questionsAndAnswers);
-    }
 
+    }
 }

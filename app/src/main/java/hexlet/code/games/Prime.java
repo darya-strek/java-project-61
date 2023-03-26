@@ -1,6 +1,7 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
 public class Prime {
 
@@ -10,13 +11,9 @@ public class Prime {
     private static final String DESCRIPTION = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
     public static boolean isPrime(int number) {
-        if (number <= 0) {
-            return false;
-        } else {
-            for (var n = 2; n <= (number / 2); n += 1) {
-                if (number % n == 0) {
-                    return false;
-                }
+        for (var n = 2; n <= (number / 2); n += 1) {
+            if (number <= 0 || number % n == 0) {
+                return false;
             }
         }
         return true;

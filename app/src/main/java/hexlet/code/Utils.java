@@ -1,4 +1,4 @@
-package hexlet.code.games;
+package hexlet.code;
 
 public class Utils {
     public static int generateRangomNumber(int max, int min) {
