@@ -30,7 +30,7 @@ public class Prime {
         String[][] questionsAndAnswers = new String[maxStepOfGame][2];
 
         for (var i = firstStepOfGame; i < maxStepOfGame; i += 1) {
-            int currentRandomNumber = Utils.generateRangomNumber(MAX_RANDOM_NUMBER, MIN_RANDOM_NUMBER);
+            int currentRandomNumber = Utils.generateRandomNumber(MAX_RANDOM_NUMBER, MIN_RANDOM_NUMBER);
             String rightAnswer = isPrime(currentRandomNumber) ? "yes" : "no";
             questionsAndAnswers[i][0] = Integer.toString(currentRandomNumber);
             questionsAndAnswers[i][1] = rightAnswer;

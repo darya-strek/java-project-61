@@ -12,7 +12,7 @@ public class Calc {
 
     private static String getRandomOperator() {
         String[] operators = {"+", "-", "*"};
-        int i = (int) (Math.random() * operators.length);
+        int i = Utils.generateRandomNumber(operators.length - 1, 0);
         return operators[i];
     }
 
@@ -25,8 +25,8 @@ public class Calc {
 
         for (var i = firstStepOfGame; i < maxStepOfGame; i += 1) {
 
-            int firstNumber = Utils.generateRangomNumber(MAX_RANDOM_NUMBER, MIN_RANDOM_NUMBER);
-            int secondNumber = Utils.generateRangomNumber(MAX_RANDOM_NUMBER, MIN_RANDOM_NUMBER);
+            int firstNumber = Utils.generateRandomNumber(MAX_RANDOM_NUMBER, MIN_RANDOM_NUMBER);
+            int secondNumber = Utils.generateRandomNumber(MAX_RANDOM_NUMBER, MIN_RANDOM_NUMBER);
             String operator = getRandomOperator();
 
             questionsAndAnswers[i][0] = firstNumber + " " + operator + " " + secondNumber;
