@@ -32,13 +32,13 @@ public class Progression {
 
         for (var i = stepOfGame; i < maxStepOfGame; i += 1) {
 
-            int firstNumber = Utils.generateRandomNumber(MAX_FIRST_NUMBER, MIN_RANDOM_NUMBER);
-            int stepOfProgression = Utils.generateRandomNumber(MAX_STEP_OF_PROGRESSION, MIN_RANDOM_NUMBER);
-            int lengthOfArray = Utils.generateRandomNumber(MAX_LENGTH_OF_ARRAY, MIN_LENGTH_OF_ARRAY);
+            int firstNumber = Utils.generateRandomNumber(MIN_RANDOM_NUMBER, MAX_FIRST_NUMBER);
+            int stepOfProgression = Utils.generateRandomNumber(MIN_RANDOM_NUMBER, MAX_STEP_OF_PROGRESSION);
+            int lengthOfArray = Utils.generateRandomNumber(MIN_LENGTH_OF_ARRAY, MAX_LENGTH_OF_ARRAY);
 
             String[] arrayOfNumbers = generateProgressionArray(firstNumber, stepOfProgression, lengthOfArray);
 
-            int hiddenArrayNumber = Utils.generateRandomNumber(lengthOfArray, 1) - 1;
+            int hiddenArrayNumber = Utils.generateRandomNumber(0, lengthOfArray - 1);
 
             questionsAndAnswers[i][1] = arrayOfNumbers[hiddenArrayNumber];
             arrayOfNumbers[hiddenArrayNumber] = "..";

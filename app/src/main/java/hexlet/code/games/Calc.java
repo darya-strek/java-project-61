@@ -10,11 +10,7 @@ public class Calc {
 
     private static final String DESCRIPTION = "What is the result of the expression?";
 
-    private static String getRandomOperator() {
-        String[] operators = {"+", "-", "*"};
-        int i = Utils.generateRandomNumber(operators.length, 1) - 1;
-        return operators[i];
-    }
+    private static final char[] OPERATORS = {'+', '-', '*'};
 
     public static void startGameCalc() {
 
@@ -25,16 +21,17 @@ public class Calc {
 
         for (var i = firstStepOfGame; i < maxStepOfGame; i += 1) {
 
-            int firstNumber = Utils.generateRandomNumber(MAX_RANDOM_NUMBER, MIN_RANDOM_NUMBER);
-            int secondNumber = Utils.generateRandomNumber(MAX_RANDOM_NUMBER, MIN_RANDOM_NUMBER);
-            String operator = getRandomOperator();
+            int firstNumber = Utils.generateRandomNumber(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
+            int secondNumber = Utils.generateRandomNumber(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
+            int indexOperator = Utils.generateRandomNumber(0, OPERATORS.length - 1);
+            char operator = OPERATORS[indexOperator];
 
             questionsAndAnswers[i][0] = firstNumber + " " + operator + " " + secondNumber;
 
             int operationResult = switch (operator) {
-                case "+" -> firstNumber + secondNumber;
-                case "-" -> firstNumber - secondNumber;
-                case "*" -> firstNumber * secondNumber;
+                case '+' -> firstNumber + secondNumber;
+                case '-' -> firstNumber - secondNumber;
+                case '*' -> firstNumber * secondNumber;
                 default -> throw new RuntimeException("Unknown operator: " + operator);
             };
 

@@ -23,8 +23,8 @@ public class GCD {
 
         for (var i = firstStepOfGame; i < maxStepOfGame; i += 1) {
 
-            int firstNumber = Utils.generateRandomNumber(MAX_RANDOM_NUMBER, MIN_RANDOM_NUMBER);
-            int secondNumber = Utils.generateRandomNumber(MAX_RANDOM_NUMBER, MIN_RANDOM_NUMBER);
+            int firstNumber = Utils.generateRandomNumber(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
+            int secondNumber = Utils.generateRandomNumber(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
 
             questionsAndAnswers[i][0] = firstNumber + " " + secondNumber;
 
