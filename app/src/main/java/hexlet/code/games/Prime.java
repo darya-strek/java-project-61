@@ -11,7 +11,7 @@ public class Prime {
     private static final String DESCRIPTION = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
     public static boolean isPrime(int number) {
-        if (number <= 0) {
+        if (number < 2) {
             return false;
         }
         for (var n = 2; n <= (number / 2); n += 1) {

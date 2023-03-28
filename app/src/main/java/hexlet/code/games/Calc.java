@@ -12,7 +12,7 @@ public class Calc {
 
     private static String getRandomOperator() {
         String[] operators = {"+", "-", "*"};
-        int i = Utils.generateRandomNumber(operators.length - 1, 0);
+        int i = Utils.generateRandomNumber(operators.length, 1) - 1;
         return operators[i];
     }
 
@@ -35,7 +35,7 @@ public class Calc {
                 case "+" -> firstNumber + secondNumber;
                 case "-" -> firstNumber - secondNumber;
                 case "*" -> firstNumber * secondNumber;
-                default -> throw new RuntimeException("Unknown operator");
+                default -> throw new RuntimeException("Unknown operator: " + operator);
             };
 
             questionsAndAnswers[i][1] = Integer.toString(operationResult);
