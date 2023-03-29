@@ -4,6 +4,8 @@ import java.util.Scanner;
 
 public class Engine {
 
+    public static final int MAX_STEP_OF_GAME = 3;
+
     public static void game(String description, String[][] questionsAndAnswers) {
 
         Scanner scanner = new Scanner(System.in);

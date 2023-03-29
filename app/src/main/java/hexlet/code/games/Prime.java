@@ -25,11 +25,10 @@ public class Prime {
     public static void startGamePrime() {
 
         final int firstStepOfGame = 0;
-        final int maxStepOfGame = 3;
 
-        String[][] questionsAndAnswers = new String[maxStepOfGame][2];
+        String[][] questionsAndAnswers = new String[Engine.MAX_STEP_OF_GAME][2];
 
-        for (var i = firstStepOfGame; i < maxStepOfGame; i += 1) {
+        for (var i = firstStepOfGame; i < Engine.MAX_STEP_OF_GAME; i += 1) {
             int currentRandomNumber = Utils.generateRandomNumber(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
             String rightAnswer = isPrime(currentRandomNumber) ? "yes" : "no";
             questionsAndAnswers[i][0] = Integer.toString(currentRandomNumber);

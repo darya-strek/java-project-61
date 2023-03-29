@@ -26,11 +26,10 @@ public class Progression {
     public static void startGameProgression() {
 
         final int stepOfGame = 0;
-        final int maxStepOfGame = 3;
 
-        String[][] questionsAndAnswers = new String[maxStepOfGame][2];
+        String[][] questionsAndAnswers = new String[Engine.MAX_STEP_OF_GAME][2];
 
-        for (var i = stepOfGame; i < maxStepOfGame; i += 1) {
+        for (var i = stepOfGame; i < Engine.MAX_STEP_OF_GAME; i += 1) {
 
             int firstNumber = Utils.generateRandomNumber(MIN_RANDOM_NUMBER, MAX_FIRST_NUMBER);
             int stepOfProgression = Utils.generateRandomNumber(MIN_RANDOM_NUMBER, MAX_STEP_OF_PROGRESSION);
